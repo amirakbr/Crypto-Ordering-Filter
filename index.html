@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" type="text/css" href="./style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css" integrity="sha512-OivR4OdSsE1onDm/i3J3Hpsm5GmOVvr9r49K3jJ0dnsxVzZgaOJ5MfxEAxCyGrzWozL9uJGKz6un3A7L+redIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+     <script>
+          tailwind.config = {
+            theme: {
+              screens : {
+               vms: '300px' , 
+                ms : '400px' , 
+                md : '670px' , 
+                lg : '976px' , 
+                xl : '1440px' ,
+              },
+              extend: {
+                colors: {
+                    vaporwaveBlue : '#136efc', 
+                    lightGreen : '#d4fdeb' ,
+                    lemonGreen : '#4faa87' ,
+                    lightRed : '#ffe5e2' , 
+                    red : '#be7e7e' ,
+                }
+              }
+            }
+          }
+      </script>
+      <style type="text/tailwindcss">
+          @layer utilities {
+            .content-auto {
+              content-visibility: auto;
+            }
+          }
+      </style>
+</head>
+<body class="overflow-x-hidden">
+     <main id="main" class="py-2 px-3 container">
+          <div class="flex flex-col items-start space-y-2 w-full p-6">
+               <div class="cursor-pointer header flex items-center">
+                    <div class="titleblob shadow-2xl p-1.5 bg-vaporwaveBlue rounded-full border-vaporwaveBlue mt-0.5 mr-4"></div>
+                    <h1 class="text-2xl">
+                         Filter :
+                    </h1>
+               </div>
+               <div class="w-full flex flex-col">
+                    <div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Pair
+                         </h2>
+                         <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
+                    </div>
+                    <div class="flex flex-col items-start gap-1 mt-3">
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="pair" type="radio" id="BTCUSDT">
+                              <label class="pairLabel" for="BTCUSDT">BTCUSDT</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="pair" type="radio" id="ETHUSDT">
+                              <label class="pairLabel" for="ETHUSDT">ETHUSDT</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="pair" type="radio" id="XRPUSDT">
+                              <label class="pairLabel" for="XRPUSDT">XRPUSDT</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="pair" type="radio" id="BNBUSDT">
+                              <label class="pairLabel" for="BNBUSDT">BNBUSDT</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="pair" type="radio" id="LINKUSDT">
+                              <label class="pairLabel" for="LINKUSDT">LINKUSDT</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="pair" type="radio" id="ADAUSDT">
+                              <label class="pairLabel" for="ADAUSDT">ADAUSDT</label>
+                         </div>
+                    </div>
+               </div>
+               <div class="w-full flex flex-col">
+                    <div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Date
+                         </h2>
+                         <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
+                    </div>
+                    <div class="date flex flex-row items-center justify-between border border-solid border-1 border-vaporwaveBlue pr-3 rounded overflow-hidden mt-3 gap-3 vms:flex-col ms:flex-row">
+                         <div class="start w-full" >
+                              <input class="p-0 m-0 text-center focus:outline-none focus:ring-0 border-none w-full" type="text" name="startDate" id="startDate" placeholder="2022-07-27" value="20/07/2022" onblur="(this.type='text')" onfocus="(this.type='date')">
+                         </div>
+                         <span>
+                              to
+                         </span>
+                         <div class="end w-full">
+                              <input class="p-0 m-0 text-center focus:outline-none focus:ring-0 border-none w-full" type="text" name="endDate" id="endDate " placeholder="salam" value="20/07/2022" onblur="(this.type='text')" onfocus="(this.type='date')">
+                         </div>
+                    </div>                
+               </div>
+               <div class="w-full flex flex-col">
+                    <div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Size
+                         </h2>
+                         <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
+                    </div>
+                    <div class="flex flex-col items-start gap-1 mt-3">
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size0">
+                              <label class="Size" for="Size0">0-1.99</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size1">
+                              <label class="Size" for="Size1">2-4.99</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size2">
+                              <label class="Size" for="Size2">5-9.99</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size3">
+                              <label class="Size" for="Size3">10-19.99</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size4">
+                              <label class="Size" for="Size4">20-49.99</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size5">
+                              <label class="Size" for="Size5">50-199.99</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size6">
+                              <label class="Size" for="Size6">200-999.99</label>
+                         </div>
+                         <div class="form-check relative costumesize w-full flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size7">
+                              <label class="Size" for="Size7">1000-9999.99</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size8">
+                              <label class="Size" for="Size8">1000-9999.99</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size9">
+                              <label class="Size" for="Size9">10000 AND OVER</label>
+                         </div>
+                    </div>
+               </div>
+               <div class="w-full flex flex-col">
+                    <div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Direction
+                         </h2>
+                         <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
+                    </div>
+                    <div class="flex items-center gap-3 mt-3 vms:flex-col ms:flex-row vms:items-start ms:items-center">
+                         <button class="LongPosition before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl ActiveLongPosition">Long</button>
+                         <button class="ShortPostion before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl">Short</button>
+                    </div>
+               </div>
+               <div class="w-full flex flex-col">
+                    <div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Efficency
+                         </h2>
+                         <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
+                    </div>
+                    <div class="flex items-center gap-1 mt-3 pl-5 vms:flex-col vms:items-start ms:flex-row ms:items-center vms:p-0 ms:mt-3 ms:pl-5">
+                         <p class="text-xl font-semibold">Efficency :</p>
+                         <p class="rangeValue border-2 border-lemonGreen px-4 py mt-2 ml-6 rounded-lg text-xl font-bold vms:m-0 ms:mt-2 ms:ml-6">
+                              0%
+                         </p>
+                    </div>
+                    <div class="ranging w-full h-3 rounded-lg mt-5 before:rounded-lg before:absolute before:content-[''] before:table before:w-full before:h-full before:clear-both ">
+                         <input id="large-range" type="range" class="range w-full bg-gray-200 rounded-lg appearance-none cursor-pointer range absolute h-full w-full">
+                    </div>
+                    <div class="w-full flex items-center justify-between">
+                         <span value=0 class="efficency__range cursor-pointer">0%</span>
+                         <span value=25 class="efficency__range cursor-pointer">25%</span>
+                         <span value=50 class="efficency__range cursor-pointer">50%</span>
+                         <span value=75 class="efficency__range cursor-pointer">75%</span>
+                         <span value=100 class="efficency__range cursor-pointer">100%</span>
+                    </div>
+               </div>
+               <div class="w-full flex flex-col">
+                    <div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Risk
+                         </h2>
+                         <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
+                    </div>
+                    <span></span>
+               </div>
+               <div class="w-full flex flex-col">
+                    <div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Risk/Reward
+                         </h2>
+                         <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
+                    </div>
+                    <div class="flex flex-col items-start gap-1 mt-3">
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="rb" id="RB0">
+                              <label class="RLabel" for="RB0">LESS THAN 1/1</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="rb" id="RB1">
+                              <label class="RLabel" for="RB1">1/1</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="rb" id="RB2">
+                              <label class="RLabel" for="RB2">1/3</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="rb" id="RB3">
+                              <label class="RLabel" for="RB3">1/4</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="rb" id="RB4">
+                              <label class="RLabel" for="RB4">1/5</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="rb" id="RB5">
+                              <label class="RLabel" for="RB5">MORE THAN 1/5</label>
+                         </div>
+                    </div>
+               </div>
+               <div class="w-full flex flex-col">
+                    <div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Setup
+                         </h2>
+                         <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
+                    </div>
+                    <div class="flex flex-col items-start gap-1 mt-3">
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="Size" id="BTCUSDT">
+                              <label class="SetupLabel" for="BTCUSDT">LESS THAN 1/1</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="Size" id="ETHUSDT">
+                              <label class="SetupLabel" for="ETHUSDT">1/1</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="Size" id="XRPUSDT">
+                              <label class="SetupLabel" for="XRPUSDT">1/3</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="Size" id="BNBUSDT">
+                              <label class="SetupLabel" for="BNBUSDT">1/4</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="Size" id="LINKUSDT">
+                              <label class="SetupLabel" for="LINKUSDT">1/5</label>
+                         </div>
+                         <div class="form-check flex items-center">
+                              <input class="w-0 h-0 invisible" type="checkbox" name="Size" id="ADAUSDT">
+                              <label class="SetupLabel" for="ADAUSDT">MORE THAN 1/5</label>
+                         </div>
+                    </div>
+               </div>
+               <div class="w-full flex flex-col">
+                    <div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Win/Loss
+                         </h2>
+                         <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
+                    </div>
+                    <div class="button__container flex items-center gap-3 mt-3 vms:flex-col vms:items-start ms:flex-row ms:items-center">
+                         <button class="win before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl flex items-baseline">Win</button>
+                         <button class="lose before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl ActiveShortPostion flex items-baseline">Loss</button>
+                    </div>
+               </div>       
+               <div class="form__button flex items-center gap-3">
+                    <button class="text-gray-500 bg-gray-200 py-2 px-4 rounded-lg mt-8">Cancel</button>
+                    <button class="bg-vaporwaveBlue text-white rounded-lg py-2 px-6 mt-8 ">Apply Filter</button>
+               </div>             
+          </div>
+     </main>
+     <script src="./app.js"></script>
+</body>
+</html>
+<!--<div class="cursor-pointer header flex items-center justify-between">
+                         <h2 class="text-xl">
+                              Date
+                         </h2>
+                         <p class="accordeon-menu text-2xl flex items-center justify-center text-vaporwaveBlue"></p>
+                    </div>
+                    <div class="date flex items-center justify-between border border-solid border-1 border-vaporwaveBlue pr-7 rounded overflow-hidden">
+                         <div class="start w-full" >
+                              <input class="text-center focus:outline-none focus:ring-0 border-none w-full" type="text" name="startDate" id="startDate" placeholder="2022-07-27" onblur="(this.type='text')" onfocus="(this.type='date')">
+                         </div>
+                         <span>
+                              to
+                         </span>
+                         <div class="end w-full">
+                              <input class="text-center focus:outline-none focus:ring-0 border-none w-full" type="text" name="endDate" id="endDate" placeholder="salam" onblur="(this.type='text')" onfocus="(this.type='date')">
+                         </div>
+                    </div>-->
