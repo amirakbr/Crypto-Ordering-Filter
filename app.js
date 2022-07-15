@@ -104,3 +104,24 @@ pairLabel.forEach((r) => {
           r.classList.add("active__input") ; 
      })
 })
+const Size = document.querySelectorAll(".Size") ; 
+Size.forEach((r) => {
+     r.addEventListener("click" , (e) => {
+          r.classList.toggle("active__input") ; 
+     })
+})
+const RLabel = document.querySelectorAll(".RLabel") ; 
+RLabel.forEach((r) => {
+     r.addEventListener("click" , (e) => {
+          RLabel.forEach((ee) => {
+               ee.classList.remove("active__input") ; 
+          })
+          r.classList.add("active__input") ; 
+     })
+})
+const SetupLabel = document.querySelectorAll(".SetupLabel") ;
+SetupLabel.forEach((r) => {
+     r.addEventListener("click" , (e) => {
+          r.classList.toggle("active__input") ; 
+     })
+})

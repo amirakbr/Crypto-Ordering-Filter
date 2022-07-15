@@ -105,16 +105,6 @@
           border-radius: .2rem;
      }
 }
-
-
-
-
-
-
-
-
-
-
 .LongPosition , .ShortPostion , .win , .lose{
      transition: all .2s ease-in;
      border: .2rem solid transparent !important;
@@ -153,8 +143,11 @@
           background-color: #b9b9b9;
           transition: all .2s ease-in;
           border-radius: .8rem;
-          p {
+          .deative {
                transition: all .2s ease-in;
           }
      }
+}
+.active {
+     color: rgb(225, 0, 0) !important;
 }
