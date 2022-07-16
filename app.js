@@ -115,7 +115,7 @@ efficencyRange.forEach((e) => {
 
 
 const LongPosition = document.querySelector(".LongPosition") ; 
-LongPosition.classList += `transition-all duration-300 border-2 border-solid border-transparent py-2 px-3 before:content-long before:font-fontawsome before:font-black before:mr-2` ; 
+LongPosition.classList += `transition-all duration-300 border-2 border-solid py-2 px-3 before:content-long before:font-fontawsome before:font-black before:mr-2 border-green text-green bg-lightGreen` ; 
 const ShortPostion = document.querySelector(".ShortPostion") ; 
 ShortPostion.classList += `transition-all duration-300 border-2 border-solid border-transparent py-2 px-3 before:content-short before:font-fontawsome before:font-black before:mr-2` ; 
 ShortPostion.addEventListener("click" , (e) => {
