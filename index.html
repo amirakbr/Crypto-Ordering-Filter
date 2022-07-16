@@ -13,8 +13,12 @@
      <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
      <script>
           tailwind.config = {
-            theme: {
+               theme: {
+                    fontFamily : {
+                         fontawsome : ['"Font Awesome 6 Free"'] ,
+                    } , 
               screens : {
+               vvms: '100px' , 
                vms: '300px' , 
                 ms : '400px' , 
                 md : '670px' , 
@@ -22,13 +26,19 @@
                 xl : '1440px' ,
               },
               extend: {
+               content : {
+                    'tick' : '"\\f00c"', 
+                    'long' : '"\\e098"' , 
+                    'short' : '"\\e097"' , 
+               } ,
                 colors: {
                     vaporwaveBlue : '#136efc', 
                     lightGreen : '#d4fdeb' ,
-                    lemonGreen : '#4faa87' ,
+                    green : '#4faa87' ,
                     lightRed : '#ffe5e2' , 
                     red : '#be7e7e' ,
-                }
+                    lightGray : 'rgba(128, 128, 128, 0.194) ' , 
+                } ,
               }
             }
           }
@@ -42,10 +52,10 @@
       </style>
 </head>
 <body class="overflow-x-hidden">
-     <main id="main" class="py-2 px-3 container">
-          <div class="flex flex-col items-start space-y-2 w-full p-6">
+     <main id="main" class="py-2 px-3">
+          <div class="flex flex-col items-start space-y-2 p-6 max-w-sm">
                <div class="cursor-pointer header flex items-center">
-                    <div class="titleblob shadow-2xl p-1.5 bg-vaporwaveBlue rounded-full border-vaporwaveBlue mt-0.5 mr-4"></div>
+                    <div class="shadow-[0rem_0rem_0.6rem_0rem_#136efc] p-1.5 bg-vaporwaveBlue rounded-full border-vaporwaveBlue mt-0.5 mr-4"></div>
                     <h1 class="text-2xl">
                          Filter :
                     </h1>
@@ -139,7 +149,7 @@
                               <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size6">
                               <label class="Size" for="Size6">200-999.99</label>
                          </div>
-                         <div class="form-check relative costumesize w-full flex items-center">
+                         <div class="form-check relative costumesize w-full flex items-center after:table after:clear-both after:content-['_+'] after:absolute after:right-0 after:text-vaporwaveBlue after:text-3xl after:mr-8">
                               <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size7">
                               <label class="Size" for="Size7">1000-9999.99</label>
                          </div>
@@ -160,9 +170,9 @@
                          </h2>
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
-                    <div class="flex items-center gap-3 mt-3 vms:flex-col ms:flex-row vms:items-start ms:items-center">
-                         <button class="LongPosition before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl ActiveLongPosition">Long</button>
-                         <button class="ShortPostion before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl">Short</button>
+                    <div class="flex items-center gap-3 mt-3 vvms:flex-col ms:flex-row vvms:items-start ms:items-center">
+                         <button class="LongPosition before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl">Long</button>
+                         <button class="ShortPostion before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl">Short</button>
                     </div>
                </div>
                <div class="w-full flex flex-col">
@@ -178,7 +188,7 @@
                               0%
                          </p>
                     </div>
-                    <div class="ranging w-full h-3 rounded-lg mt-5 before:rounded-lg before:absolute before:content-[''] before:table before:w-full before:h-full before:clear-both ">
+                    <div class="ranging w-full h-3 rounded-lg mt-5 before:rounded-lg before:absolute before:content-[''] before:table before:w-full before:h-full before:clear-both relative">
                          <input id="large-range" type="range" class="range w-full bg-gray-200 rounded-lg appearance-none cursor-pointer range absolute h-full w-full">
                     </div>
                     <div class="w-full flex items-center justify-between">
@@ -274,13 +284,13 @@
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
                     <div class="button__container flex items-center gap-3 mt-3 vms:flex-col vms:items-start ms:flex-row ms:items-center">
-                         <button class="win before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl flex items-baseline">Win</button>
-                         <button class="lose before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl ActiveShortPostion flex items-baseline">Loss</button>
+                         <button class="bg-lightGreen text-green win before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl flex items-baseline border-green text-green">Win</button>
+                         <button class="lose before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl flex items-baseline">Loss</button>
                     </div>
                </div>       
-               <div class="form__button flex items-center gap-3">
-                    <button class="text-gray-500 bg-gray-200 py-2 px-4 rounded-lg mt-8">Cancel</button>
-                    <button class="bg-vaporwaveBlue text-white rounded-lg py-2 px-6 mt-8 ">Apply Filter</button>
+               <div class="form__button flex items-center gap-3 vvms:flex-col ms:flex-row vvms:items-start vvms:pl-4 ms:items-center">
+                    <button class="text-gray-500 bg-gray-200 py-2 px-4 rounded-lg mt-8 vvms:mt-3 ms:mt-8 font-semibold">Cancel</button>
+                    <button class="bg-vaporwaveBlue text-white rounded-lg py-2 px-6 mt-8 vvms:mt-3 ms:mt-8 font-semibold">Apply Filter</button>
                </div>             
           </div>
      </main>
