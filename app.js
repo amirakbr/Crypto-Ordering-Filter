@@ -1,7 +1,7 @@
 const header = document.querySelectorAll(".header") ; 
 header.forEach((e) => {
      if(e.children[1].classList.contains("header__icon")){
-          e.children[1].previousElementSibling.classList.add("font-semibold") ; 
+          e.children[1].previousElementSibling.classList.add("font-medium") ; 
           e.children[1].classList.add("deactive") ; 
           e.children[1].classList.add("font-semibold") ; 
           e.parentElement.classList.add("h-10") ; 
@@ -10,10 +10,11 @@ header.forEach((e) => {
           e.children[1].style=`line-height : 2.5rem !important`
           e.classList.add("transition-all") ; 
           e.classList.add("duration-300") ; 
-          e.classList.add("hover:bg-gray-300") ; 
+          e.classList.add("hover:bg-gray-100") ; 
           e.classList.add("hover:rounded-xl") ; 
           e.classList.add("pl-18px") ; 
           e.classList.add("pr-3") ; 
+          e.classList.add("text-gray-800") ; 
           if(e.children[1].classList.contains("deactive")){
                e.children[1].innerHTML = "+" ; 
                e.children[1].classList.add("text-2xl") ; 
@@ -74,7 +75,7 @@ function checker(e){
           e.classList.add("text-4xl") ; 
           e.classList.remove("text-2xl") ; 
           e.parentElement.parentElement.classList.remove("h-10")
-          e.parentElement.classList.remove("hover:bg-gray-300") ; 
+          e.parentElement.classList.remove("hover:bg-gray-100") ; 
           e.parentElement.classList.remove("hover:rounded-xl") ; 
      }
      else if(e.classList.contains("text-red")){
@@ -84,7 +85,7 @@ function checker(e){
           e.classList.remove("text-4xl") ; 
           e.classList.add("text-2xl") ; 
           e.parentElement.parentElement.classList.add("h-10")
-          e.parentElement.classList.add("hover:bg-gray-300") ; 
+          e.parentElement.classList.add("hover:bg-gray-100") ; 
           e.parentElement.classList.add("hover:rounded-xl") ; 
      }
 }
@@ -162,17 +163,19 @@ lose.addEventListener("click" , (e) => {
 })
 const input = document.querySelectorAll("input") ; 
 input.forEach((e) => {
-     e.classList.add("font-semibold") ; 
+     e.classList.add("font-normal") ; 
+     e.classList.add("text-gray-800") ; 
 })
 const label = document.querySelectorAll("label") ; 
 label.forEach((e) => {
-     e.classList.add("font-semibold") ; 
+     e.classList.add("font-normal") ; 
+     e.classList.add("text-gray-800") ; 
 })
 document.querySelector(".cancel__button").addEventListener("click" , (e) => {
      input.forEach((e) => {
           e.value = `` ; 
           range.value = 10; 
-          Ranger.style = `background : rgba(0, 0, 0, 0) linear-gradient(to right, #00ffe7 0%, #25db86 calc(${10}%), rgb(236, 236, 236) calc(${10}%), rgb(236, 236, 236) 100%) repeat scroll 0% 0%` ;
+          Ranger.style = `background : rgba(0, 0, 0, 0) linear-gradient(to right, #00ffe7 0%, #25db86 calc(${rangeValue}%), rgb(236, 236, 236) calc(${rangeValue}%), rgb(236, 236, 236) 100%) repeat scroll 0% 0%` ;
      })
      label.forEach((e) => {
           e.classList.add("after:translate-y-[100%]") ;
