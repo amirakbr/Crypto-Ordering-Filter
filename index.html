@@ -26,10 +26,14 @@
                 xl : '1440px' ,
               },
               extend: {
+               spacing: {
+                    '18px' : '1.8rem' ,
+               },
                content : {
                     'tick' : '"\\f00c"', 
                     'long' : '"\\e098"' , 
                     'short' : '"\\e097"' , 
+                    'calendar' : '"\\f133"' ,    
                } ,
                 colors: {
                     vaporwaveBlue : '#136efc', 
@@ -68,7 +72,7 @@
                          </h2>
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
-                    <div class="flex flex-col items-start gap-1 mt-3">
+                    <div class="flex flex-col items-start gap-1 mt-3 ml-18px mr-3">
                          <div class="form-check flex items-center">
                               <input class="w-0 h-0 invisible" name="pair" type="radio" id="BTCUSDT">
                               <label class="pairLabel" for="BTCUSDT">BTCUSDT</label>
@@ -102,7 +106,7 @@
                          </h2>
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
-                    <div class="date flex flex-row items-center justify-between border border-solid border-1 border-vaporwaveBlue pr-3 rounded overflow-hidden mt-3 gap-3 vms:flex-col ms:flex-row">
+                    <div class="date flex flex-row items-center justify-between border border-solid border-1 border-vaporwaveBlue pr-3 py-2 rounded overflow-hidden mt-3 gap-3 vms:flex-col ms:flex-row after:content-calendar after:font-fontawsome after:font-black after:text-vaporwaveBlue after:text-xl ml-18px mr-3">
                          <div class="start w-full" >
                               <input class="p-0 m-0 text-center focus:outline-none focus:ring-0 border-none w-full" type="text" name="startDate" id="startDate" placeholder="2022-07-27" value="20/07/2022" onblur="(this.type='text')" onfocus="(this.type='date')">
                          </div>
@@ -121,7 +125,7 @@
                          </h2>
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
-                    <div class="flex flex-col items-start gap-1 mt-3">
+                    <div class="flex flex-col items-start gap-1 mt-3 ml-18px mr-3">
                          <div class="form-check flex items-center">
                               <input class="w-0 h-0 invisible" name="size" type="checkbox" id="Size0">
                               <label class="Size" for="Size0">0-1.99</label>
@@ -171,28 +175,22 @@
                          </h2>
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
-                    <div class="flex items-center gap-3 mt-3 vvms:flex-col ms:flex-row vvms:items-start ms:items-center">
+                    <div class="flex items-center gap-3 mt-3 vvms:flex-col ms:flex-row vvms:items-start ms:items-center ml-18px mr-3">
                          <button class="LongPosition before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl ">Long</button>
                          <button class="ShortPostion before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl">Short</button>
                     </div>
                </div>
-               <div class="w-full flex flex-col">
+               <div class="w-full flex flex-col relative">
                     <div class="cursor-pointer header flex items-center justify-between">
                          <h2 class="text-xl">
                               Efficency
                          </h2>
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
-                    <div class="flex items-center gap-1 mt-3 pl-5 vms:flex-col vms:items-start ms:flex-row ms:items-center vms:p-0 ms:mt-3 ms:pl-5">
-                         <p class="text-xl font-semibold">Efficency :</p>
-                         <p class="rangeValue border-2 border-lemonGreen px-4 py mt-2 ml-6 rounded-lg text-xl font-bold vms:m-0 ms:mt-2 ms:ml-6">
-                              0%
-                         </p>
+                    <div class="ranging h-3 rounded-lg mt-5 before:rounded-lg before:absolute before:content-[''] before:table before:w-full before:h-full before:clear-both relative ml-18px mr-3">
+                         <input id="large-range" type="range" class="range bg-gray-200 rounded-lg appearance-none cursor-pointer range absolute h-full w-full">
                     </div>
-                    <div class="ranging w-full h-3 rounded-lg mt-5 before:rounded-lg before:absolute before:content-[''] before:table before:w-full before:h-full before:clear-both relative">
-                         <input id="large-range" type="range" class="range w-full bg-gray-200 rounded-lg appearance-none cursor-pointer range absolute h-full w-full">
-                    </div>
-                    <div class="w-full flex items-center justify-between">
+                    <div class="flex items-center justify-between ml-18px mr-3 mt-3 font-semibold">
                          <span value=0 class="efficency__range cursor-pointer">0%</span>
                          <span value=25 class="efficency__range cursor-pointer">25%</span>
                          <span value=50 class="efficency__range cursor-pointer">50%</span>
@@ -216,7 +214,7 @@
                          </h2>
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
-                    <div class="flex flex-col items-start gap-1 mt-3">
+                    <div class="flex flex-col items-start gap-1 mt-3 ml-18px mr-3">
                          <div class="form-check flex items-center">
                               <input class="w-0 h-0 invisible" type="checkbox" name="rb" id="RB0">
                               <label class="RLabel" for="RB0">LESS THAN 1/1</label>
@@ -250,7 +248,7 @@
                          </h2>
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
-                    <div class="flex flex-col items-start gap-1 mt-3">
+                    <div class="flex flex-col items-start gap-1 mt-3 ml-18px mr-3">
                          <div class="form-check flex items-center">
                               <input class="w-0 h-0 invisible" type="checkbox" name="Size" id="BTCUSDT">
                               <label class="SetupLabel" for="BTCUSDT">LESS THAN 1/1</label>
@@ -284,13 +282,13 @@
                          </h2>
                          <p class="text-2xl flex items-center justify-center text-vaporwaveBlue header__icon"></p>
                     </div>
-                    <div class="button__container flex items-center gap-3 mt-3 vms:flex-col vms:items-start ms:flex-row ms:items-center">
+                    <div class="button__container flex items-center gap-3 mt-3 vms:flex-col vms:items-start ms:flex-row ms:items-center ml-18px mr-3">
                          <button class="bg-lightGreen text-green win before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl flex items-baseline border-green text-green">Win</button>
                          <button class="lose before:content[''] before:font-fontawsome before:font-black flex items-center rounded-lg bg-gray-300 text-gray-400 font-bold text-1xl flex items-baseline">Loss</button>
                     </div>
                </div>       
-               <div class="form__button flex items-center gap-3 vvms:flex-col ms:flex-row vvms:items-start vvms:pl-4 ms:items-center">
-                    <button class="text-gray-500 bg-gray-200 py-2 px-4 rounded-lg mt-8 vvms:mt-3 ms:mt-8 font-semibold">Cancel</button>
+               <div class="form__button flex items-center gap-3 vvms:flex-col ms:flex-row vvms:items-start vvms:pl-18px ms:items-center">
+                    <button class="cancel__button text-gray-500 bg-gray-200 py-2 px-4 rounded-lg mt-8 vvms:mt-3 ms:mt-8 font-semibold">Cancel</button>
                     <button class="bg-vaporwaveBlue text-white rounded-lg py-2 px-6 mt-8 vvms:mt-3 ms:mt-8 font-semibold">Apply Filter</button>
                </div>             
           </div>

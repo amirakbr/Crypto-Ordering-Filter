@@ -6,14 +6,14 @@ header.forEach((e) => {
           e.children[1].classList.add("font-semibold") ; 
           e.parentElement.classList.add("h-10") ; 
           e.parentElement.classList.add("overflow-y-hidden") ; 
-          e.classList.add("px-4") ; 
           e.children[1].classList.remove("text-2xl") ; 
           e.children[1].style=`line-height : 2.5rem !important`
           e.classList.add("transition-all") ; 
           e.classList.add("duration-300") ; 
           e.classList.add("hover:bg-gray-300") ; 
           e.classList.add("hover:rounded-xl") ; 
-          e.nextElementSibling.classList.add("ml-6") ; 
+          e.classList.add("pl-18px") ; 
+          e.classList.add("pr-3") ; 
           if(e.children[1].classList.contains("deactive")){
                e.children[1].innerHTML = "+" ; 
                e.children[1].classList.add("text-2xl") ; 
@@ -89,14 +89,11 @@ function checker(e){
      }
 }
 const range = document.querySelector(".range") ; 
-const rangeValueHtml =  document.querySelector(".rangeValue") ; 
 let rangeValue = 10; 
 range.value = rangeValue ; 
-rangeValueHtml.innerHTML =`${rangeValue} %` 
 range.addEventListener("input" , (e) => {
      rangeValue =  e.target.value ; 
      Ranger.style = `background : rgba(0, 0, 0, 0) linear-gradient(to right, #00ffe7 0%, #25db86 calc(${rangeValue}%), rgb(236, 236, 236) calc(${rangeValue}%), rgb(236, 236, 236) 100%) repeat scroll 0% 0%` ;
-     rangeValueHtml.innerHTML = `${rangeValue} %` ; 
 })
 const Ranger = document.querySelector("#large-range") ; 
 Ranger.style = `background : rgba(0, 0, 0, 0) linear-gradient(to right, #00ffe7 0%, #25db86 calc(${rangeValue}%), rgb(236, 236, 236) calc(${rangeValue}%), rgb(236, 236, 236) 100%) repeat scroll 0% 0%` ;
@@ -106,7 +103,6 @@ efficencyRange.forEach((e) => {
           let efficencyRangeValue = Number(event.target.attributes.value.value) ; 
           Ranger.style = `background : rgba(0, 0, 0, 0) linear-gradient(to right, #00ffe7 0%, #25db86 calc(${efficencyRangeValue}%), rgb(236, 236, 236) calc(${efficencyRangeValue}%), rgb(236, 236, 236) 100%) repeat scroll 0% 0%` ;
           range.value = efficencyRangeValue ; 
-          rangeValueHtml.innerHTML = `${efficencyRangeValue} %`; 
      })
 })
 
@@ -171,4 +167,14 @@ input.forEach((e) => {
 const label = document.querySelectorAll("label") ; 
 label.forEach((e) => {
      e.classList.add("font-semibold") ; 
+})
+document.querySelector(".cancel__button").addEventListener("click" , (e) => {
+     input.forEach((e) => {
+          e.value = `` ; 
+          range.value = 10; 
+          Ranger.style = `background : rgba(0, 0, 0, 0) linear-gradient(to right, #00ffe7 0%, #25db86 calc(${10}%), rgb(236, 236, 236) calc(${10}%), rgb(236, 236, 236) 100%) repeat scroll 0% 0%` ;
+     })
+     label.forEach((e) => {
+          e.classList.add("after:translate-y-[100%]") ;
+     })
 })
